@@ -1,0 +1,233 @@
+/* =========================
+   VARIABLES (MISMAS DEL LOGIN)
+========================= */
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --card: #1f2933;
+  --primary: #38bdf8;
+  --primary-dark: #0ea5e9;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #374151;
+  --radius: 14px;
+  --shadow: 0 15px 35px rgba(0,0,0,.45);
+  --transition: .25s ease;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: var(--surface);
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* =========================
+   BOTONES RAPIDOS
+========================= */
+.panel-botones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.btn-rapido {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.05rem;
+}
+
+.btn-rapido:hover {
+  border-color: var(--primary);
+  background: rgba(56,189,248,.08);
+}
+
+/* =========================
+   TICKET
+========================= */
+.panel-ticket {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+}
+
+.panel-ticket h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#lineasTicket div {
+  padding: .35rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: .95rem;
+}
+
+.total {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.acciones {
+  display: flex;
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: .65rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background: rgba(255,255,255,.05);
+}
+
+.btn-cobrar {
+  background: var(--primary);
+  color: #020617;
+  border: none;
+}
+
+.btn-cobrar:hover {
+  background: var(--primary-dark);
+}
+
+.btn-cancelar {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* =========================
+   MODAL COBRO
+========================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #020617;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  animation: fadeIn .3s ease;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+label {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: .25rem;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: .65rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #020617;
+  color: var(--text);
+  margin-bottom: .75rem;
+  transition: var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* =========================
+   MENSAJES
+========================= */
+.msg-error {
+  font-size: .8rem;
+  color: var(--danger);
+  margin-top: -.4rem;
+  margin-bottom: .6rem;
+}
+
+.msg-success {
+  font-size: .8rem;
+  color: var(--success);
+}
+
+/* =========================
+   ANIMACION
+========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

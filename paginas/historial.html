@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CarWash - Historial</title>
+  <link rel="stylesheet" href="../estilos/styleCaja.css">
+  <!-- Estilos específicos para la tabla -->
+  <style>
+    .tabla-contenedor {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      overflow-x: auto; /* Para móviles */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    tr:last-child td { border-bottom: none; }
+    .btn-borrar {
+      background: rgba(239, 68, 68, 0.2);
+      color: var(--danger);
+      border: 1px solid var(--danger);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-borrar:hover { background: var(--danger); color: white; }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .btn-nav { text-decoration: none; font-size: 0.9rem; display: block; text-align: center; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-actions" style="width:100%; justify-content:space-between;">
+    <h1>HISTORIAL DE SERVICIOS</h1>
+    <div class="col-6">
+    <a href="caja.html" class="btn btn-primary btn-nav">Volver a Caja</a>
+  </div>
+</header>
+
+<main class="contenedor" style="display: block;"> 
+  <!-- Usamos display block para que ocupe todo el ancho, no grid -->
+  
+  <section class="tabla-contenedor">
+    <table id="tablaHistorial">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Vehículo (Placa/Modelo)</th>
+          <th>Servicios</th>
+          <th>Total</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se llena con JS -->
+      </tbody>
+    </table>
+    <p id="mensajeVacio" style="text-align:center; padding: 2rem; color: var(--muted); display:none;">
+      No hay registros aún.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <small>Registros almacenados en IndexedDB.</small>
+</footer>
+
+<script src="../funciones/db/db.js"></script>
+<script src="../funciones/historial.js"></script>
+
+</body>
+</html>

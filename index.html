@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car WASH</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+
+<body>
+    <div id="toast" class="toast"></div>
+    <!-- MODAL LOGIN DE USUARIO -->
+    <div id="loginModal" class="modal">
+        <h2> Iniciar sesión</h2>
+
+        <label for="loginUser">Usuario</label>
+        <input id="loginUser" type="text" placeholder="USUARIO" maxlength="20" autocomplete="off" />
+
+        <label for="loginPass">Contraseña</label>
+        <input id="loginPass" type="password" placeholder="Contraseña" />
+
+        <button id="btnEntrar" class="btn">Entrar</button>
+
+        <div style="margin-top:20px;text-align:center;font-size:.85rem;letter-spacing:1px;color:#00ffff">
+            ¿No tienes cuenta? <span id="btnShowCreate" style="cursor:pointer;text-decoration:underline">Crear
+                usuario</span>
+        </div>
+
+        <div class="hint">Si el usuario no existe, puedes crearlo aquí.</div>
+    </div>
+
+    <!-- MODAL CREAR USUARIO -->
+    <div id="createModal" class="modal" style="display:none;">
+
+        <h2> Crear usuario nuevo</h2>
+
+        <label>Nombre</label>
+        <input id="nombre" type="text" placeholder="Nombre completo" />
+
+        <label>Primer Apellido</label>
+        <input id="apellido1" type="text" placeholder="Primer apellido" />
+
+        <label>Segundo Apellido</label>
+        <input id="apellido2" type="text" placeholder="Segundo apellido" />
+
+        <label>Cédula</label>
+        <input id="cedula" type="text" placeholder="Cedula de identidad" maxlength="9" />
+
+        <label>Teléfono</label>
+        <input id="telefono" type="text" placeholder="Numero de telefono" maxlength="8" />
+
+        <label>Correo Electrónico</label>
+        <input id="correo" type="text" placeholder="Correo electronico" />
+
+        <label>Contraseña</label>
+        <input id="contrasenia" type="password" placeholder="Contraseña" />
+
+        <button id="btnCreate" class="btn">Crear usuario</button>
+        <button id="btnCancelCreate" class="btn" style="margin-top:10px;background:rgba(255,0,0,.15);border-color:#ff3333;color:#ff3333">Cancelar</button>
+
+    </div>
+
+    
+
+    <script src="Funciones/db/db.js" defer></script>
+    <script src="Funciones/app.js" defer></script>
+    <script src="Funciones/funciones.js" defer></script>
+    <script src="Funciones/restriciones.js" defer></script>
+    <script src="Funciones/login.js" defer></script>
+
+</body>
+
+</html>
